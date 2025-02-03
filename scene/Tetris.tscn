@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://6vetk8pfd63p"]
+
+[ext_resource type="Texture2D" uid="uid://dxwgqd73hauyc" path="res://tetris_blocks.png" id="1_ec48e"]
+[ext_resource type="Script" path="res://scripts/tile_map.gd" id="2_wi72c"]
+[ext_resource type="PackedScene" uid="uid://cosmjaowdtrea" path="res://scene/hud.tscn" id="3_wlccr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imqsj"]
+texture = ExtResource("1_ec48e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bhyel"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_imqsj")
+
+[node name="Tetris" type="Node2D"]
+position = Vector2(-1, 0)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_bhyel")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "boardL"
+layer_0/tile_data = PackedInt32Array(1, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1114112, 0, 0, 1179648, 0, 0, 1245184, 0, 0, 1310720, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 2, 0, 0, 3, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 4, 0, 0, 5, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 6, 0, 0, 7, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 8, 0, 0, 9, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 10, 0, 0, 11, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 393227, 0, 0, 458763, 0, 0, 524299, 0, 0, 589835, 0, 0, 655371, 0, 0, 720907, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1310731, 0, 0, 1245195, 0, 0, 1179659, 0, 0, 1114123, 0, 0, 1048587, 0, 0, 983051, 0, 0, 917515, 0, 0, 851979, 0, 0, 786443, 0, 0)
+layer_1/name = "active"
+script = ExtResource("2_wi72c")
+
+[node name="HUD" parent="TileMap" instance=ExtResource("3_wlccr")]

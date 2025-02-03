@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://cosmjaowdtrea"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxrpl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0728426, 0.0728427, 0.0728426, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lnlq"]
+bg_color = Color(0.501271, 0.7024, 0.702203, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwodg"]
+bg_color = Color(0.237159, 0.381884, 0.382165, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bujjd"]
+bg_color = Color(0.443137, 0.643137, 0.643137, 1)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 425.0
+offset_top = 150.0
+offset_right = 625.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxrpl")
+
+[node name="NextPieceLabel" type="Label" parent="."]
+offset_left = 430.0
+offset_top = 100.0
+offset_right = 610.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 30
+text = "NEXT PIECE:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 430.0
+offset_top = 350.0
+offset_right = 610.0
+offset_bottom = 395.0
+theme_override_font_sizes/font_size = 25
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 300.0
+offset_right = 255.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 430.0
+offset_top = 500.0
+offset_right = 610.0
+offset_bottom = 540.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_8lnlq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jwodg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bujjd")
+text = "RESTART"
